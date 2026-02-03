@@ -13,6 +13,8 @@ Once downloaded, place the BetterSinkholes3.dll file into the /LabAPI/plugins/<p
 | --- | --- | --- | --- |
 | `IsEnabled` | bool | true | Enables the plugin. Set it to false to disable it. |
 | `IsAllowedToLateJoinMultipleTimes` | bool | false | Allows multiple late joins by the same person |
+| `SSSEnable` | bool | true | Enable/disable Server Side Settings |
+| `SSSKey` | int | 1998 | Unique Server Side Settings key ID |
 | `LateJoinLimitSeconds` | int | 60 | How many seconds should late join be open |
 | `BroadcastTime` | int | 6 | Time in seconds that will late join message will be shown |
 | `LateJoinDelay` | float | 2.5f | How many seconds after joining should we try late join |
