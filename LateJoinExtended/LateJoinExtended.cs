@@ -17,7 +17,7 @@ public class LateJoinExtended : Plugin
 
     public override string Description => "Late joins player to a specified class";
 
-    public override Version Version => new Version(1, 0, 0);
+    public override Version Version => new Version(1, 0, 1);
 
     public override Version RequiredApiVersion => new Version(LabApiProperties.CompiledVersion);
 
@@ -32,11 +32,16 @@ public class LateJoinExtended : Plugin
     {
         Instance = this;
         EventHandlers.RegisterEvents();
+
+        if( Config.SSSEnable )
+            SSSHandler.OnEnable();
     }
 
     public override void Disable()
     {
         EventHandlers.UnregisterEvents();
+        if( Config.SSSEnable )
+            SSSHandler.OnDisable();
         Instance = null!;
     }
 }

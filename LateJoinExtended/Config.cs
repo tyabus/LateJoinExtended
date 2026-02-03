@@ -12,6 +12,12 @@ public sealed class Config
     [Description("Allow multiple late joins by the same person?")]
     public bool IsAllowedToLateJoinMultipleTimes { get; set; } = false;
 
+    [Description("Enable/disable Server Side Settings")]
+    public bool SSSEnable { get; set; } = true;
+
+    [Description("Server Side Settings Key ID")]
+    public int SSSKey { get; set; } = 1998;
+
     [Description("How many seconds into the round should we allow late joining?")]
     public int LateJoinLimitSeconds { get; set; } = 60;
 

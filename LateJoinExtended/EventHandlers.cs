@@ -8,6 +8,7 @@ using Respawning.Objectives;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UserSettings.ServerSpecific;
 
 namespace LateJoinExtended;
 public class EventHandlers
@@ -28,6 +29,7 @@ public class EventHandlers
         ServerEvents.RoundStarted += OnRoundStarted;
         PlayerEvents.Joined += OnPlayerJoin;
     }
+
     static private void OnRoundStarted()
     {
         roundStartTime = DateTime.UtcNow;
@@ -38,7 +40,13 @@ public class EventHandlers
 
     static private void OnPlayerJoin(PlayerJoinedEventArgs ev)
     {
-        if (!Round.IsRoundInProgress || !_config.IsEnabled)
+        if(!_config.IsEnabled)
+            return;
+
+        if(_config.SSSEnable)
+            ServerSpecificSettingsSync.SendToPlayer(ev.Player.ReferenceHub);
+
+        if(!Round.IsRoundInProgress)
             return;
 
         Timing.CallDelayed(_config.LateJoinDelay, () =>
@@ -53,6 +61,9 @@ public class EventHandlers
             return;
 
         if (plr.IsAlive || !plr.IsPlayer)
+            return;
+
+        if (ServerSpecificSettingsSync.GetSettingOfUser<SSTwoButtonsSetting>(plr.ReferenceHub, _config.SSSKey).SyncIsB)
             return;
 
         if (LateJoinIds.Contains(plr.UserId) && !_config.IsAllowedToLateJoinMultipleTimes)
