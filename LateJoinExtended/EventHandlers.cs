@@ -63,6 +63,9 @@ public class EventHandlers
         if (plr.IsAlive || !plr.IsPlayer)
             return;
 
+        if (plr.Role == RoleTypeId.Overwatch)
+            return;
+
         if (ServerSpecificSettingsSync.GetSettingOfUser<SSTwoButtonsSetting>(plr.ReferenceHub, _config.SSSKey).SyncIsB)
             return;
 
