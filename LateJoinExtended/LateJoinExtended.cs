@@ -1,4 +1,5 @@
 ﻿using LabApi.Features;
+using LabApi.Features.Console;
 using LabApi.Loader;
 using LabApi.Loader.Features.Plugins;
 using System;
@@ -31,6 +32,10 @@ public class LateJoinExtended : Plugin
     public override void Enable()
     {
         Instance = this;
+
+        if( GameCore.ConfigFile.ServerConfig.GetInt("late_join_time") > 0 )
+            Logger.Warn("late_join_time is not 0, consider changing it in config_gameplay.txt");
+
         EventHandlers.RegisterEvents();
 
         if( Config.SSSEnable )
