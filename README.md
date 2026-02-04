@@ -13,6 +13,7 @@ Once downloaded, place the LateJoinExtended.dll file into the /LabAPI/plugins/<p
 | --- | --- | --- | --- |
 | `IsEnabled` | bool | true | Enables the plugin. Set it to false to disable it. |
 | `IsAllowedToLateJoinMultipleTimes` | bool | false | Allows multiple late joins by the same person |
+| `IsLateJoinCommandEnabled` | bool | true | Allows player to late join by command |
 | `SSSEnable` | bool | true | Enable/disable Server Side Settings |
 | `SSSKey` | int | 1998 | Unique Server Side Settings key ID |
 | `LateJoinLimitSeconds` | int | 60 | How many seconds should late join be open |

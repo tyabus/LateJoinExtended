@@ -55,7 +55,7 @@ public class EventHandlers
         });
     }
 
-    static void HandleLateJoin(Player plr)
+    static public void HandleLateJoin(Player plr)
     {
         if (plr == null || plr.IsDestroyed)
             return;

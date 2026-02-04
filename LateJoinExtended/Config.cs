@@ -12,6 +12,9 @@ public sealed class Config
     [Description("Allow multiple late joins by the same person?")]
     public bool IsAllowedToLateJoinMultipleTimes { get; set; } = false;
 
+    [Description("Is late join command enabled?")]
+    public bool IsLateJoinCommandEnabled { get; set; } = true;
+
     [Description("Enable/disable Server Side Settings")]
     public bool SSSEnable { get; set; } = true;
 

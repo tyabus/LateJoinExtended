@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <LangVersion>10</LangVersion>
+    <LangVersion>12</LangVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -43,6 +43,9 @@
     <Reference Include="LabApi">
       <HintPath>$(SL_References)\LabApi.dll</HintPath>
     </Reference>
+    <Reference Include="CommandSystem.Core">
+      <HintPath>$(SL_References)\CommandSystem.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Mirror">
       <HintPath>$(SL_References)\Mirror.dll</HintPath>
     </Reference>
@@ -67,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="EventHandlers.cs" />
+    <Compile Include="LateJoinCommand.cs" />
     <Compile Include="LateJoinExtended.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SSSHandler.cs" />
