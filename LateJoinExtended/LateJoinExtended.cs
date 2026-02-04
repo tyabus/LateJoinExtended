@@ -15,7 +15,7 @@ public class LateJoinExtended : Plugin<Config>
 
     public override string Description => "Late joins player to a specified class";
 
-    public override Version Version => new Version(1, 0, 2);
+    public override Version Version => new Version(1, 0, 3);
 
     public override Version RequiredApiVersion => new Version(LabApiProperties.CompiledVersion);
 
