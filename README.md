@@ -2,11 +2,11 @@
 LateJoinExtended is a LabAPI plugin that replaces & extends the vanilla late join system.
 
 ## Requirements
-- Make sure the config option in `config_gameplay.txt` named `latejoin_seconds` is set to 0.
+- Make sure the config option in `config_gameplay.txt` named `late_join_time` is set to 0.
 
 ## Releases and Installation
 You can find the latest release [here](https://github.com/tyabus/LateJoinExtended/releases).
-Once downloaded, place the BetterSinkholes3.dll file into the /LabAPI/plugins/<port> folder and restart your server.
+Once downloaded, place the LateJoinExtended.dll file into the /LabAPI/plugins/<port> folder and restart your server.
 
 ## Configs
 | Config option | Value type | Default value | Description |
